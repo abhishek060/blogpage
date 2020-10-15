@@ -74,7 +74,7 @@ body{
     -webkit-box-shadow: 0 0 0 1px #1ebc30 inset, 0 0 0 0 transparent;
     box-shadow: 0 0 0 1px #1ebc30 inset, 0 0 0 0 transparent;
 }
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 450px){
     .nav-c {
         width: 96%;
         margin: 0 2%;
