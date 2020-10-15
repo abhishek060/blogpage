@@ -121,7 +121,7 @@ app.use(postRoute);
 app.use(commentRoute);
 
 // APP CONFIG MongoDB Atlas
-mongoose.connect("mongodb+srv://projectblog:achilles@cluster0-0ehgr.mongodb.net/blog?retryWrites=true&w=majority",{
+mongoose.connect(process.env.DATABASEURL,{
     useNewUrlParser: true, 
 	useUnifiedTopology: true, 
 	useFindAndModify: false,
