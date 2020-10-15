@@ -9,6 +9,9 @@
     <div class="tile">
         <div class="left">
             <div class="title"><%= blogs.title %></div>
+            <div class="mobile-img">
+                <img src="<%= blogs.image %>" alt="">
+            </div>
             <div class="des"><%- blogs.description.substring(0,115) %>...</div>
             <div class="author">
                 <p>by <%= blogs.author.firstname %> <%= blogs.author.lastname %> - <%= blogs.created.toDateString() %></p>
