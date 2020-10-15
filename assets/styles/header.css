@@ -36,6 +36,7 @@ body{
     border-radius: 4px;
     padding: 0.5% 1%;
     font-size: 13px;
+    outline: none;
 }
 .search-btn{
     border: 1px solid #8a92a3;
@@ -45,6 +46,7 @@ body{
     color: black;
     cursor: pointer;
     padding: 0.5% 1%;
+    outline: none;
 }
 .fail-container{
     text-align: center;

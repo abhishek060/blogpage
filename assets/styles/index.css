@@ -47,6 +47,7 @@
     background-color: brown;
     text-decoration: none;
     text-align: center;
+    outline: none;
 }
 .author{
     overflow: hidden;
