@@ -1,0 +1,12 @@
+<%- include("partials/header") %>
+<div class="container">
+    <div class="edit-post-heading">Edit Post</div>
+    <form action="/blogs/<%= data._id %>?_method=PUT" method="POST">
+        <input class="input-field" type="text" name="blog[title]" placeholder="Title" value="<%= data.title %>">
+        <input class="input-field" type="text" name="blog[image]" placeholder="Image URL" value="<%= data.image %>">
+        <textarea class="input-field" rows="10" name="blog[description]"><%= data.description %></textarea>
+        <input class="update-post-btn" type="submit" value="Update">
+    </form>
+</div>
+<link rel="stylesheet" type="text/css" href="/styles/edit.css">
+<%- include("partials/footer") %>

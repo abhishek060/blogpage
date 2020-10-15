@@ -1,0 +1,15 @@
+<%- include("partials/header") %>
+<div class="container">
+    <div class="signup-heading">Sign Up</div>
+    <form action="/signup" method="POST" novalidate>
+        <input class="input-field" type="text" name="firstname" placeholder="Firstname">
+        <input class="input-field" type="text" name="lastname" placeholder="Lastname">
+        <input class="input-field" type="email" name="username" placeholder="Email">
+        <input class="input-field" type="password" name="password" placeholder="Password">
+        <input class="input-field" type="password" name="confirmPassword" placeholder="Confirm Password">
+        <input class="signup-btn" type="submit" value="Sign up">
+    </form>
+    <div class="log-in">Already have an account? <a href="/login">Log In</a></div>
+</div>
+<link rel="stylesheet" type="text/css" href="/styles/signup.css">
+<%- include("partials/footer") %>

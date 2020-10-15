@@ -1,0 +1,10 @@
+<%- include("partials/header") %>
+<div class="container">
+    <div class="reset-heading">Forgot Password</div>
+    <form action="/reset" method="POST">
+        <input class="input-field" type="email" name="username" placeholder="Email">
+        <input class="reset-pass" type="submit" value="Reset Password">
+    </form>
+</div>
+<link rel="stylesheet" type="text/css" href="/styles/reset.css">
+<%- include("partials/footer") %>

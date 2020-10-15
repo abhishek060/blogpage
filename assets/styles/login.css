@@ -1,0 +1,86 @@
+.container{
+    width: 24%;
+    margin: 2% 38%;
+    overflow: hidden;
+}
+.login-btn-g{
+    border: 1px solid #8a92a3;
+    padding: 4% 1%;
+    border-radius: 4px;
+    margin: 2% 0;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-btn-fb{
+    border: 1px solid transparent;
+    padding: 4% 1%;
+    border-radius: 4px;
+    margin: 2% 0;
+    background-color: #1a538a;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.google{
+    color: #29303b;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+}
+.fb{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+}
+.or{
+    margin: 1% 0;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+.input-field{
+    border: 1px solid #8a92a3;
+    border-radius: 4px;
+    padding: 4%;
+    width: 91.4%;
+    margin: 1% 0;
+    font-size: 16px;
+}
+.log-in{
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 4% 2%;
+    width: 100%;
+    margin: 1% 0;
+    font-size: 16px;
+    background-color: #ec5252;
+    color: white;
+    cursor: pointer;
+}
+.forgot-pass{
+    text-align: center;
+    margin: 2% 0;
+    padding: 4% 1%;
+    font-size: 16px;
+    font-weight: 300;
+}
+.forgot-pass a{
+    text-decoration: none;
+    font-weight: 500;
+}
+.sign-up{
+    text-align: center;
+    margin: 2% 0;
+    padding: 4% 1%;
+    font-size: 16px;
+    font-weight: 300;
+}
+.sign-up a{
+    text-decoration: none;
+    font-weight: 700;
+}

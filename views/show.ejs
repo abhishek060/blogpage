@@ -1,0 +1,66 @@
+<%- include("partials/header") %>
+<div class="container">
+    <div class="title"><%= data.title %></div>
+    <div class="submit-by">by <%= data.author.firstname %> <%= data.author.lastname %> - <%= data.created.toDateString() %></div>
+    <div class="image">
+        <img src="<%= data.image %>" alt="">
+    </div>
+    <div class="des"><%= data.description %></div>
+    <% if(currentUser && currentUser.username === "abhi@gmail.com"){ %>
+        <a class="edit" href="/blogs/<%= data._id %>/edit">Edit</a>
+        <form action="/blogs/<%= data._id %>?_method=DELETE" method="POST">
+            <button class="delete">Delete</button>
+        </form>
+    <% } %>
+    <div class="comment-box">
+        <div class="heading"><%= data.comments.length %> Comments</div>
+        <form action="/blogs/<%= data._id %>/comments" method="POST">
+            <div class="add-comment">
+                <div class="user-photo">
+                    <img src="/pictures/localUser.jpg" alt="">
+                </div>
+                <div class="input-field" id="comment" contentEditable="true"></div>
+            </div>
+            <!-- <textarea class="input-field" name="text" id="comment" rows="1"></textarea> -->
+            <input id="hidden-cmnt-box" name="text" type="text" hidden>
+            <button id="post-comment" class="comment-button">Comment</button>
+        </form>
+    </div>
+    <div class="comments">
+        <% data.comments.forEach((comment)=>{ %>
+        <div class="tile">
+            <div class="left">
+                <% if(comment.author.picture){ %>
+                    <img src="<%= comment.author.picture %>" alt="">
+                <% }else{ %>
+                    <img src="/pictures/localUser.jpg" alt="">
+                <% } %>
+            </div>
+            <div class="right">
+                <div class="author"><%= comment.author.firstname %> <%= comment.author.lastname %> <span><%= moment(comment.created).fromNow() %></span></div>
+                <div class="org-box">
+                    <div class="text"><%= comment.text %></div>
+                    <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                    <button class="edit-comment">Edit</button>
+                    <form action="/blogs/<%= data._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                        <button class="delete-comment">Delete</button>
+                    </form>
+                    <% } %>
+                </div>
+                <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                <div class="edit-box dn">
+                    <form action="/blogs/<%= data._id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+                        <input class="change-comment" type="text" name="comment[text]" placeholder="Write a comment..." value="<%= comment.text %>">
+                        <button class="update-comment">Update</button>
+                    </form>
+                    <button class="cancel-comment">Cancel</button>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
+<link rel="stylesheet" type="text/css" href="/styles/show.css">
+<script type="text/javascript" src="/scripts/show.js"></script>
+<%- include("partials/footer") %>

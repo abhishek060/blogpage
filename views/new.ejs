@@ -1,0 +1,12 @@
+<%- include("partials/header") %>
+<div class="container">
+    <div class="new-post-heading">Add New Post</div>
+    <form action="/blogs" method="POST">
+        <input class="input-field" type="text" name="blog[title]" placeholder="Title">
+        <input class="input-field" type="text" name="blog[image]" placeholder="Image URL">
+        <textarea class="input-field" rows="10" name="blog[description]"></textarea>
+        <input class="add-post-btn" type="submit">
+    </form>
+</div>
+<link rel="stylesheet" type="text/css" href="/styles/new.css">
+<%- include("partials/footer") %>

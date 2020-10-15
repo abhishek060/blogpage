@@ -1,0 +1,69 @@
+<%- include("partials/header") %>
+<% if(noMatch !== undefined){ %>
+    <div class="fail-container">
+        <div class="fail"><%= noMatch %></div>
+    </div>
+<% } %>
+<div class="container">
+    <% blogs.forEach((blogs)=>{ %>
+    <div class="tile">
+        <div class="left">
+            <div class="title"><%= blogs.title %></div>
+            <div class="des"><%- blogs.description.substring(0,115) %>...</div>
+            <div class="author">
+                <p>by <%= blogs.author.firstname %> <%= blogs.author.lastname %> - <%= blogs.created.toDateString() %></p>
+                <a class="read" href="/blogs/<%= blogs._id %>">Read More</a>
+            </div>
+        </div>
+        <div class="right">
+            <img src="<%= blogs.image %>" alt="">
+        </div>
+    </div>
+    <% }) %>
+    <div class="row">
+        <% if (pages && pages > 0) { %>
+        <ul class="pagination">
+            <% if (current == 1) { %>
+            <li><a>First</a></li>
+            <% } else { %>
+            <li><a href="/blogs<%if(search){%>?search=<%=search%><%}%>">First</a></li>
+            <% } %>
+     
+            <% if (current == 1) { %>
+            <li><a>«</a></li>
+            <% } else { %>
+            <li><a href="/blogs?page=<%= Number(current) - 1 %><%if(search){%>&search=<%=search%><%}%>">«</a></li>
+            <% } %>
+     
+            <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+            <% if (i !== 1) { %>
+            <li><a>...</a></li>
+            <% } %>
+            <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+            <% if (i == current) { %>
+            <li class="active"><a><%= i %></a></li>
+            <% } else { %>
+            <li><a href="/blogs?page=<%= i %><%if(search){%>&search=<%=search%><%}%>"><%= i %></a></li>
+            <% } %>
+            <% if (i == Number(current) + 4 && i < pages) { %>
+            <li><a>...</a></li>
+            <% } %>
+            <% } %>
+     
+            <% if (current == pages) { %>
+            <li><a>»</a></li>
+            <% } else { %>
+            <li><a href="/blogs?page=<%= Number(current) + 1 %><%if(search){%>&search=<%=search%><%}%>">»</a></li>
+            <% } %>
+     
+            <% if (current == pages) { %>
+            <li><a>Last</a></li>
+            <% } else { %>
+            <li><a href="/blogs?page=<%= pages %><%if(search){%>&search=<%=search%><%}%>">Last</a></li>
+            <% } %>
+        </ul>
+        <% } %>
+    </div>
+</div>
+<link rel="stylesheet" type="text/css" href="/styles/index.css">
+<%- include("partials/footer") %>

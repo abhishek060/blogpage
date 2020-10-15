@@ -1,0 +1,29 @@
+.container{
+    width: 50%;
+    margin-left: 25%;
+    overflow: hidden;
+}
+.input-field{
+    border: 1px solid #8a92a3;
+    border-radius: 4px;
+    padding: 1.5% 1%;
+    margin: 1% 0;
+    font-size: 16px;
+    width: 97.7%;
+}
+.edit-post-heading{
+    padding: 2% 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+.update-post-btn{
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 1.5% 1%;
+    width: 100%;
+    margin: 1% 0;
+    font-size: 16px;
+    background-color: #ec5252;
+    color: white;
+    cursor: pointer;
+}

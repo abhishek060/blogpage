@@ -1,0 +1,15 @@
+<%- include("partials/header") %>
+<div class="container">
+    <!-- <a class="fb login-btn-fb" href="/facebook">Continue with Facebook</a> -->
+    <a class="google login-btn-g" href="/google">Continue with Google</a>
+    <p class="or">Or</p>
+    <form action="/login" method="POST" novalidate>
+        <input class="input-field" type="email" name="username" placeholder="Email">
+        <input class="input-field" type="password" name="password" placeholder="Password">
+        <input class="log-in" type="submit" value="Log In">
+    </form>
+    <div class="forgot-pass">or <a href="/reset">Forgot Password</a></div>
+    <div class="sign-up">Don't have an account? <a href="/signup">Sign up</a></div>
+</div>
+<link rel="stylesheet" type="text/css" href="/styles/login.css">
+<%- include("partials/footer") %>
