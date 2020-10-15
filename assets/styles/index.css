@@ -131,6 +131,9 @@
         justify-content: space-between;
         align-items: center;
     }
+    .author .read{
+        font-size: 10px;
+    }
     .right{
         display: none;
     }
