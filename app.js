@@ -72,12 +72,12 @@ passport.use(new passportGoogle({
     }
 ));
 // PASSPORT FACEBOOK
-passport.use(new passportFacebook({
-    clientID: "608947716397849",
-    clientSecret: "9d942ae1e7470340dd79043e4c451ba5",
-    callbackURL: "http://localhost:3000/facebook/callback"
-},  function(accessToken, refreshToken, profile, done){
-    console.log(profile);
+// passport.use(new passportFacebook({
+//     clientID: "608947716397849",
+//     clientSecret: "9d942ae1e7470340dd79043e4c451ba5",
+//     callbackURL: "http://localhost:3000/facebook/callback"
+// },  function(accessToken, refreshToken, profile, done){
+//     console.log(profile);
         //check user table for anyone with a facebook ID of profile.id
     //     User.findOne({
     //         "providerUserId": profile.id 
@@ -106,8 +106,8 @@ passport.use(new passportFacebook({
     //             return done(err, user);
     //         }
     //     });
-    }
-));
+//     }
+// ));
 
 app.use((req,res,next)=>{
     res.locals.currentUser = req.user;
@@ -121,7 +121,7 @@ app.use(postRoute);
 app.use(commentRoute);
 
 // APP CONFIG MongoDB Atlas
-mongoose.connect("DATABASEURL",{
+mongoose.connect("mongodb+srv://projectblog:achilles@cluster0-0ehgr.mongodb.net/blog?retryWrites=true&w=majority",{
     useNewUrlParser: true, 
 	useUnifiedTopology: true, 
 	useFindAndModify: false,

@@ -3,7 +3,7 @@ const express        = require("express"),
       router         = express.Router();
 
 // INDEX ROUTE
-router.get("/blogs", postController.home);
+router.get("/", postController.home);
 
 // NEW ROUTE
 router.get("/blogs/new", isLoggedInAsAdmin, postController.addNewPost);
