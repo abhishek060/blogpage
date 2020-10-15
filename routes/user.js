@@ -70,7 +70,7 @@ function isLoggedOut(req,res,next){
         return next();
     }
     req.flash("error","You need to logout first");
-    res.redirect("/blogs");
+    res.redirect("/");
 };
 
 function notLoggedIn(req,res,next){

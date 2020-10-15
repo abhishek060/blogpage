@@ -4,13 +4,13 @@ const express           = require("express"),
       router            = express.Router();
 
 // CREATE ROUTE
-router.post("/blogs/:id/comments", isLoggedIn, commentController.addComment);
+router.post("/:id/comments", isLoggedIn, commentController.addComment);
 
 // UPDATE ROUTE
-router.put("/blogs/:id/comments/:cmnt_id", checkCommentOwnership, commentController.updateComment);
+router.put("/:id/comments/:cmnt_id", checkCommentOwnership, commentController.updateComment);
 
 // DELETE ROUTE
-router.delete("/blogs/:id/comments/:cmnt_id", checkCommentOwnership, commentController.deleteComment);
+router.delete("/:id/comments/:cmnt_id", checkCommentOwnership, commentController.deleteComment);
 
 function isLoggedIn(req,res,next){
     if(req.isAuthenticated()){

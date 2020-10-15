@@ -7,21 +7,20 @@
     </div>
     <div class="des"><%= data.description %></div>
     <% if(currentUser && currentUser.username === "abhi@gmail.com"){ %>
-        <a class="edit" href="/blogs/<%= data._id %>/edit">Edit</a>
-        <form action="/blogs/<%= data._id %>?_method=DELETE" method="POST">
+        <a class="edit" href="/<%= data._id %>/edit">Edit</a>
+        <form action="/<%= data._id %>?_method=DELETE" method="POST">
             <button class="delete">Delete</button>
         </form>
     <% } %>
     <div class="comment-box">
         <div class="heading"><%= data.comments.length %> Comments</div>
-        <form action="/blogs/<%= data._id %>/comments" method="POST">
+        <form action="/<%= data._id %>/comments" method="POST">
             <div class="add-comment">
                 <div class="user-photo">
                     <img src="/pictures/localUser.jpg" alt="">
                 </div>
                 <div class="input-field" id="comment" contentEditable="true"></div>
             </div>
-            <!-- <textarea class="input-field" name="text" id="comment" rows="1"></textarea> -->
             <input id="hidden-cmnt-box" name="text" type="text" hidden>
             <button id="post-comment" class="comment-button">Comment</button>
         </form>
@@ -42,14 +41,14 @@
                     <div class="text"><%= comment.text %></div>
                     <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
                     <button class="edit-comment">Edit</button>
-                    <form action="/blogs/<%= data._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                    <form action="/<%= data._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
                         <button class="delete-comment">Delete</button>
                     </form>
                     <% } %>
                 </div>
                 <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
                 <div class="edit-box dn">
-                    <form action="/blogs/<%= data._id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+                    <form action="/<%= data._id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
                         <input class="change-comment" type="text" name="comment[text]" placeholder="Write a comment..." value="<%= comment.text %>">
                         <button class="update-comment">Update</button>
                     </form>

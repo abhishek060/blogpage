@@ -37,9 +37,9 @@ passport.serializeUser(User.serializeUser()); // Encoding data from session
 passport.deserializeUser(User.deserializeUser()); // Decoding data from session
 // PASSPORT GOOGLE
 passport.use(new passportGoogle({
-    clientID: "525258306861-08etb4ib5r0114l0dappbcniala2tarp.apps.googleusercontent.com",
-    clientSecret: "JuRnZ-9vmGqldG8uW5d_NFOS",
-    callbackURL: "http://localhost:3000/google/callback"
+    clientID: process.env.GOOGLECLIENTID,
+    clientSecret: process.env.GOOGLECLIENTSECRET,
+    callbackURL: "https://abhi3000.herokuapp.com/google/callback"
 },  function(accessToken, refreshToken, profile, done){
         //check user table for anyone with a google ID of profile.id
         User.findOne({
@@ -73,9 +73,9 @@ passport.use(new passportGoogle({
 ));
 // PASSPORT FACEBOOK
 // passport.use(new passportFacebook({
-//     clientID: "608947716397849",
-//     clientSecret: "9d942ae1e7470340dd79043e4c451ba5",
-//     callbackURL: "http://localhost:3000/facebook/callback"
+//     clientID: process.env.FBCLIENTID,
+//     clientSecret: process.env.FBCLIENTSECRET,
+//     callbackURL: "https://abhi3000.herokuapp.com/facebook/callback"
 // },  function(accessToken, refreshToken, profile, done){
 //     console.log(profile);
         //check user table for anyone with a facebook ID of profile.id

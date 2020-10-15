@@ -78,7 +78,7 @@ exports.createNewPost = (req,res,next)=>{
                         console.log(err);
                     }
                     else{
-                        res.redirect("/blogs");
+                        res.redirect("/");
                     }
                 });
             }
@@ -112,7 +112,7 @@ exports.editPost = (req,res,next)=>{
 exports.updatePost = (req,res,next)=>{
     Post.findByIdAndUpdate(req.params.id, req.body.blog)
     .then(result=>{
-        res.redirect("/blogs/"+ req.params.id);
+        res.redirect("/"+ req.params.id);
     })
     .catch(err=>{
         console.log(err);
@@ -135,7 +135,7 @@ exports.deletePost = (req,res,next)=>{
         var index = user.posts.indexOf(req.params.id);
         user.posts.splice(index,1);
         user.save();
-        res.redirect("/blogs");
+        res.redirect("/");
     })
     .catch(err=>{
         console.log(err);

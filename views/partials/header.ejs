@@ -15,10 +15,10 @@
 <body>
     <section class="navbar">
         <div class="nav-c">
-            <a class="home fl" href="/blogs">Home</a>
+            <a class="home fl" href="/">Home</a>
             <a class="home fl" href="#">About</a>
             <% if(currentUser && currentUser.username === "abhi@gmail.com"){ %>
-                <a class="new-post fl" href="/blogs/new">New Post</a>
+                <a class="new-post fl" href="/new">New Post</a>
             <% } %>
             <% if(!currentUser){ %>
             <a class="sign fr" href="/signup">Signup</a>
@@ -28,7 +28,7 @@
             <a class="user fr" href="#">Hi, <%= currentUser.firstname %></a>
             <% } %>
             <div class="search-tab">
-                <form action="/blogs" method="GET">
+                <form action="/" method="GET">
                     <input class="search-field" type="text" name="search" placeholder="Blog search...">
                     <input class="search-btn" type="submit" value="Search">
                 </form>

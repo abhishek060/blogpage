@@ -5,7 +5,7 @@ const User               = require("../models/user"),
       sendgridTransport  = require("nodemailer-sendgrid-transport"),
       transporter        = nodemailer.createTransport(sendgridTransport({
         auth: {
-            api_key: "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"
+            api_key: process.env.SENDGRIDKEY
         }
       })),
       {validationResult} = require("express-validator");
@@ -34,7 +34,7 @@ exports.addNewUser = (req,res,next)=>{
         }
         passport.authenticate("local")(req, res, function(){
             req.flash("success","Signup successful");
-            res.redirect("/blogs"); 
+            res.redirect("/"); 
         });
     });
 };
@@ -46,7 +46,7 @@ exports.login = (req,res,next)=>{
 
 // LOGGING IN
 exports.verifyLogin = passport.authenticate("local", {
-    successRedirect: "/blogs",
+    successRedirect: "/",
     failureRedirect: "/login"
 });
 
@@ -75,12 +75,12 @@ exports.postReset = (req,res,next)=>{
         })
         .then(result=>{
             req.flash("success","An email has been sent to your Email Id for verification.");
-            res.redirect("/blogs");
+            res.redirect("/");
             transporter.sendMail({
                 to: req.body.username,
                 from: "abhishek.singh.1601@gmail.com",
                 subject: "Reset Password",
-                html: `<p>Click this <a href="http://localhost:3000/reset/${token}">link</a> to set new password.</p>`
+                html: `<p>Click this <a href="https://abhi3000.herokuapp.com/reset/${token}">link</a> to set new password.</p>`
             });
         })
         .catch(err=>{
@@ -99,7 +99,7 @@ exports.getNewPassword = (req,res,next)=>{
     .then(user=>{
         if(!user){
             req.flash("error","Password rest token is invalid or has expired.");
-            return res.redirect("/blogs");
+            return res.redirect("/");
         }
         res.render("new-password", {
             userId: user._id.toString(),
@@ -124,12 +124,12 @@ exports.postNewPassword = (req,res,next)=>{
     .then(user=>{
         if(!user){
             req.flash("error","Password rest token is invalid or has expired.");
-            return res.redirect("/blogs");
+            return res.redirect("/");
         }
         user.setPassword(newPassword, function(err){
             if(err){
                 req.flash("error","Password not updated.");
-                return res.redirect("/blogs");
+                return res.redirect("/");
             }
             user.resetToken = undefined;
             user.resetTokenExpiration = undefined;
@@ -149,7 +149,7 @@ exports.postNewPassword = (req,res,next)=>{
 exports.logout = (req,res,next)=>{
     req.logout();
     req.flash("success","Logged out!");
-    res.redirect("/blogs");
+    res.redirect("/");
 };
 
 // GOOGLE LOGIN
@@ -159,7 +159,7 @@ exports.googleLogin = passport.authenticate('google', {
 
 // GOOGLE CALLBACK
 exports.googleCallback = passport.authenticate('google', { 
-    successRedirect: "/blogs",
+    successRedirect: "/",
     failureRedirect: "/login"
 });
 
@@ -170,6 +170,6 @@ exports.facebookLogin = passport.authenticate('facebook', {
 
 // FACEBOOK CALLBACK
 exports.facebookCallback = passport.authenticate('facebook', { 
-    successRedirect: "/blogs",
+    successRedirect: "/",
     failureRedirect: "/login"
 });

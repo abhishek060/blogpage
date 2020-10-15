@@ -26,7 +26,7 @@ exports.addComment = (req,res,next)=>{
                     }
                     else{
                         req.flash("success","Comment Added Successfully!");
-                        res.redirect("/blogs/"+ req.params.id);
+                        res.redirect("/"+ req.params.id);
                     }
                 });
             }
@@ -41,7 +41,7 @@ exports.updateComment = (req,res,next)=>{
     Comment.findByIdAndUpdate(req.params.cmnt_id, req.body.comment)
     .then(result=>{
         req.flash("success","Comment Edited Successfully!");
-        res.redirect("/blogs/"+ req.params.id);
+        res.redirect("/"+ req.params.id);
     })
     .catch(err=>{
         console.log(err);
@@ -58,7 +58,7 @@ exports.deleteComment = (req,res,next)=>{
         post.comments.splice(index,1);
         post.save();
         req.flash("success","Comment Deleted Successfully!");
-        res.redirect("/blogs/"+ req.params.id);
+        res.redirect("/"+ req.params.id);
     })
     .catch(err=>{
         console.log(err);
