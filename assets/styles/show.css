@@ -192,4 +192,10 @@
     .org-box .text {
         font-size: 12px;
     }
+    .change-comment {
+        width: 96.5%;
+        font-size: 12px;
+        outline: none;
+        float: right;
+    }
 }

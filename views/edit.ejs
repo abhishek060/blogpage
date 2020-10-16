@@ -1,4 +1,5 @@
 <%- include("partials/header") %>
+<link rel="stylesheet" type="text/css" href="/styles/edit.css">
 <div class="container">
     <div class="edit-post-heading">Edit Post</div>
     <form action="/<%= data._id %>?_method=PUT" method="POST">
@@ -8,5 +9,4 @@
         <input class="update-post-btn" type="submit" value="Update">
     </form>
 </div>
-<link rel="stylesheet" type="text/css" href="/styles/edit.css">
 <%- include("partials/footer") %>
