@@ -13,7 +13,7 @@
             <div class="mobile-img">
                 <img src="<%= blogs.image %>" alt="">
             </div>
-            <div class="des"><%- blogs.description.substring(0,115) %>...</div>
+            <div class="des"><%- blogs.description.substring(0,230) %>...</div>
             <div class="author">
                 <p>by <%= blogs.author.firstname %> <%= blogs.author.lastname %> - <%= blogs.created.toDateString() %></p>
                 <a class="read" href="/<%= blogs._id %>">Read More</a>
