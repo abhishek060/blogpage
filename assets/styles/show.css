@@ -160,7 +160,7 @@
         margin-left: 2%;
     }
     .title{
-        font-size: 18px;
+        font-size: 16px;
     }
     .submit-by{
         font-size: 10px;
@@ -185,6 +185,7 @@
     }
     .add-comment .input-field {
         font-size: 14px;
+        width: 90%;
     }
     .comment-box .comment-button {
         font-size: 12px;
@@ -204,5 +205,14 @@
     }
     form{
         overflow: hidden;
+    }
+    .comments .tile .left {
+        width: 8%;
+    }
+    .comments .tile .right {
+        width: 88%;
+    }
+    .add-comment .user-photo {
+        width: 8%;
     }
 }
