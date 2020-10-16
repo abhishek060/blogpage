@@ -6,15 +6,15 @@
 .tile{
     width: 90%;
     overflow: hidden;
-    padding: 5%;
+    margin: 5%;
     display: flex;
     justify-content: center;
-}
-.right {
-    width: 40%;
     box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.12);
     -webkit-transition: box-shadow 200ms ease;
     transition: box-shadow 200ms ease;
+}
+.right {
+    width: 44%;
     border-radius: 0 10px 10px 0;
 }
 .right img {
@@ -25,9 +25,6 @@
 .left {
     width: 48%;
     padding: 4%;
-    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.12);
-    -webkit-transition: box-shadow 200ms ease;
-    transition: box-shadow 200ms ease;
     border-radius: 10px 0 0 10px;
 }
 .title{
