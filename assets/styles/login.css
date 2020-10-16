@@ -92,19 +92,14 @@
     .google{
         font-size: 14px;
     }
-    .login-btn-g {
-        padding: 2% 1%;
-    }
     .or{
         font-size: 10px;
     }
     .input-field {
-        padding: 2%;
         width: 95%;
         font-size: 14px;
     }
     .log-in{
-        padding: 2%;
         font-size: 14px;
     }
     .forgot-pass, .sign-up{
