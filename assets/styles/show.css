@@ -27,6 +27,7 @@
 }
 .comment-box{
     margin: 5% 0;
+    overflow: hidden;
 }
 .comment-box .heading{
     font-size: 18px;

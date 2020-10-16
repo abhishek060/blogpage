@@ -1,4 +1,5 @@
 <%- include("partials/header") %>
+<link rel="stylesheet" type="text/css" href="/styles/show.css">
 <div class="container">
     <div class="title"><%= data.title %></div>
     <div class="submit-by">by <%= data.author.firstname %> <%= data.author.lastname %> - <%= data.created.toDateString() %></div>
@@ -60,6 +61,5 @@
         <% }) %>
     </div>
 </div>
-<link rel="stylesheet" type="text/css" href="/styles/show.css">
 <script type="text/javascript" src="/scripts/show.js"></script>
 <%- include("partials/footer") %>
