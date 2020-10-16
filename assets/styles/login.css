@@ -84,3 +84,32 @@
     text-decoration: none;
     font-weight: 700;
 }
+@media only screen and (max-width: 450px){
+    .container {
+        width: 50%;
+        margin: 2% 25%;
+    }
+    .google{
+        font-size: 14px;
+    }
+    .login-btn-g {
+        padding: 2% 1%;
+    }
+    .or{
+        font-size: 10px;
+    }
+    .input-field {
+        padding: 2%;
+        width: 95%;
+        font-size: 14px;
+    }
+    .log-in{
+        padding: 2%;
+        font-size: 14px;
+    }
+    .forgot-pass, .sign-up{
+        font-size: 12px;
+        padding: 2% 1%;
+    }
+
+}
