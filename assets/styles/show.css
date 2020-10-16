@@ -150,6 +150,9 @@
     color: black;
     border-radius: 4px;
 }
+[contenteditable=true]:empty:not(:focus):before{
+    content:attr(data-text)
+}
 @media only screen and (max-width: 450px){
     .container {
         width: 96%;

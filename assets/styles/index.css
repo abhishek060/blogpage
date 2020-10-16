@@ -2,7 +2,6 @@
     width: 70%;
     margin-left: 15%;
     overflow: hidden;
-    margin-bottom: 15%;
 }
 .tile{
     width: 90%;
@@ -136,5 +135,8 @@
     }
     .right{
         display: none;
+    }
+    .pagination li a {
+        padding: 2px 10px;
     }
 }
