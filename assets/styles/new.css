@@ -27,3 +27,19 @@
     color: white;
     cursor: pointer;
 }
+textarea{
+    resize: none;
+}
+@media only screen and (max-width: 450px){
+    .container {
+        width: 96%;
+        margin-left: 2%;
+    }
+    .input-field{
+        font-size: 14px;
+        width: 97%; 
+    }
+    .add-post-btn{
+        font-size: 14px;
+    }
+}
